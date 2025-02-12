@@ -5,14 +5,14 @@
 #include <iomanip>
 
 using namespace std;
-using namespace chrono;
+using namespace std::chrono;
 
 class LCG {
 private:
     uint64_t value;
-    static const uint64_t a = 1664525;
-    static const uint64_t c = 1013904223;
-    static const uint64_t m = 1ULL << 32;
+    const uint64_t a = 1664525;
+    const uint64_t c = 1013904223;
+    const uint64_t m = 1ULL << 32;
 
 public:
     LCG(uint64_t seed) : value(seed) {}
@@ -54,10 +54,10 @@ int64_t total_max_subarray_sum(int n, uint64_t initial_seed, int min_val, int ma
 }
 
 int main() {
-    const int n = 10000;
-    const uint64_t initial_seed = 42;
-    const int min_val = -10;
-    const int max_val = 10;
+    int n = 10000;
+    uint64_t initial_seed = 42;
+    int min_val = -10;
+    int max_val = 10;
 
     auto start_time = high_resolution_clock::now();
     int64_t result = total_max_subarray_sum(n, initial_seed, min_val, max_val);
